@@ -1,0 +1,396 @@
+[gd_scene load_steps=3 format=3 uid="uid://m123o5a83pdv"]
+
+[ext_resource type="Script" path="res://control.gd" id="1_v7rbq"]
+[ext_resource type="Texture2D" uid="uid://tnlhnxcyl3yq" path="res://icon.svg" id="2_klaj6"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v7rbq")
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="Label1" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 632.0
+offset_top = 16.0
+offset_right = 952.0
+offset_bottom = 104.0
+theme_override_font_sizes/font_size = 36
+text = "Money : "
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="Label2" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 8.0
+offset_right = 328.0
+offset_bottom = 88.0
+theme_override_font_sizes/font_size = 36
+text = "Day : 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="Open" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 98.0
+offset_top = 573.0
+offset_right = 396.0
+offset_bottom = 813.0
+theme_override_font_sizes/font_size = 36
+text = "Terminal"
+
+[node name="OpenStock" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 88.0
+offset_top = 88.0
+offset_right = 386.0
+offset_bottom = 328.0
+theme_override_font_sizes/font_size = 36
+text = "Stock"
+
+[node name="Terminal" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Control" type="Control" parent="Terminal"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 464.0
+offset_top = 128.0
+offset_right = 1136.0
+offset_bottom = 704.0
+
+[node name="ColorRect" type="ColorRect" parent="Terminal/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.188235, 0.188235, 0.188235, 1)
+
+[node name="Close" type="Button" parent="Terminal/Control"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 592.0
+offset_top = 16.0
+offset_right = 656.0
+offset_bottom = 80.0
+text = "Close"
+
+[node name="Label" type="Label" parent="Terminal/Control"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 224.0
+offset_top = 8.0
+offset_right = 424.0
+offset_bottom = 96.0
+theme_override_font_sizes/font_size = 36
+text = "Terminal"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="Regen" type="Button" parent="Terminal/Control"]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 240.0
+offset_top = 424.0
+offset_right = 456.0
+offset_bottom = 528.0
+theme_override_font_sizes/font_size = 24
+text = "Regenerate"
+
+[node name="Order" type="Control" parent="Terminal/Control"]
+anchors_preset = 0
+offset_left = 88.0
+offset_top = 104.0
+offset_right = 584.0
+offset_bottom = 544.0
+
+[node name="Icon" type="Sprite2D" parent="Terminal/Control/Order"]
+texture_filter = 1
+position = Vector2(72, 179)
+scale = Vector2(1.4375, 1.375)
+texture = ExtResource("2_klaj6")
+
+[node name="Label" type="Label" parent="Terminal/Control/Order"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 208.0
+offset_top = 56.0
+offset_right = 552.0
+offset_bottom = 320.0
+theme_override_font_sizes/font_size = 24
+text = "A *2
+B *3
+C *1"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="Label2" type="Label" parent="Terminal/Control/Order"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 288.0
+offset_top = 8.0
+offset_right = 472.0
+offset_bottom = 88.0
+theme_override_font_sizes/font_size = 36
+text = "Order"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="Stock" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Control" type="Control" parent="Stock"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 200.0
+offset_top = 64.0
+offset_right = 1408.0
+offset_bottom = 832.0
+
+[node name="ColorRect" type="ColorRect" parent="Stock/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.145098, 0.145098, 0.145098, 1)
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="Stock/Control"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 472.0
+offset_top = 24.0
+offset_right = 728.0
+offset_bottom = 136.0
+theme_override_font_sizes/font_size = 36
+text = "Stock"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="GridContainer" type="GridContainer" parent="Stock/Control"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 128.0
+offset_right = 1120.0
+offset_bottom = 712.0
+theme_override_constants/h_separation = 5
+theme_override_constants/v_separation = 5
+columns = 3
+
+[node name="A" type="Button" parent="Stock/Control/GridContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 64
+text = "A"
+
+[node name="B" type="Button" parent="Stock/Control/GridContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 64
+text = "B"
+
+[node name="C" type="Button" parent="Stock/Control/GridContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 64
+text = "C"
+
+[node name="CloseStock" type="Button" parent="Stock/Control"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 800.0
+offset_top = 24.0
+offset_right = 1104.0
+offset_bottom = 96.0
+theme_override_font_sizes/font_size = 36
+text = "Close"
+
+[node name="Package" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="Package"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1280.0
+offset_right = 1600.0
+offset_bottom = 704.0
+
+[node name="ColorRect" type="ColorRect" parent="Package/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.156863, 0.156863, 0.156863, 1)
+
+[node name="Label1" type="Label" parent="Package/Control"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 64.0
+offset_right = 264.0
+offset_bottom = 88.0
+theme_override_font_sizes/font_size = 36
+text = "Basket"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="Clear" type="Button" parent="Package/Control"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 72.0
+offset_top = 584.0
+offset_right = 264.0
+offset_bottom = 664.0
+theme_override_font_sizes/font_size = 36
+text = "Clear"
+
+[node name="Label2" type="Label" parent="Package/Control"]
+texture_filter = 1
+layout_mode = 0
+offset_top = 40.0
+offset_right = 320.0
+offset_bottom = 672.0
+theme_override_font_sizes/font_size = 36
+horizontal_alignment = 1
+autowrap_mode = 1
+
+[node name="Restock" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect2" type="ColorRect" parent="Restock"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Restock"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 200.0
+offset_top = 64.0
+offset_right = -192.0
+offset_bottom = -68.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.219608, 0.219608, 0.219608, 1)
+metadata/_edit_lock_ = true
+
+[node name="GridContainer" type="GridContainer" parent="Restock"]
+offset_left = 272.0
+offset_top = 216.0
+offset_right = 1336.0
+offset_bottom = 800.0
+theme_override_constants/h_separation = 5
+theme_override_constants/v_separation = 5
+columns = 3
+metadata/_edit_group_ = true
+
+[node name="A2" type="Button" parent="Restock/GridContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 64
+text = "A"
+
+[node name="B2" type="Button" parent="Restock/GridContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 64
+text = "B"
+
+[node name="C2" type="Button" parent="Restock/GridContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 64
+text = "C"
+
+[node name="Label1" type="Label" parent="Restock"]
+texture_filter = 1
+offset_left = 280.0
+offset_top = 96.0
+offset_right = 600.0
+offset_bottom = 184.0
+theme_override_font_sizes/font_size = 36
+text = "Money : "
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="Done" type="Button" parent="Restock"]
+texture_filter = 1
+offset_left = 1040.0
+offset_top = 104.0
+offset_right = 1338.0
+offset_bottom = 176.0
+theme_override_font_sizes/font_size = 36
+text = "Done"
+
+[node name="Finish" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 688.0
+offset_top = 344.0
+offset_right = 986.0
+offset_bottom = 584.0
+theme_override_font_sizes/font_size = 36
+text = "Complete"
+metadata/_edit_lock_ = true
+
+[connection signal="button_up" from="Open" to="." method="_on_open_button_up"]
+[connection signal="button_up" from="OpenStock" to="." method="_on_open_stock_button_up"]
+[connection signal="button_up" from="Terminal/Control/Close" to="." method="_on_close_button_up"]
+[connection signal="button_up" from="Terminal/Control/Regen" to="." method="_on_close_button_up"]
+[connection signal="button_up" from="Stock/Control/GridContainer/A" to="." method="_on_a_button_up"]
+[connection signal="button_up" from="Stock/Control/GridContainer/B" to="." method="_on_b_button_up"]
+[connection signal="button_up" from="Stock/Control/GridContainer/C" to="." method="_on_c_button_up"]
+[connection signal="button_up" from="Stock/Control/CloseStock" to="." method="_on_close_stock_button_up"]
+[connection signal="button_up" from="Package/Control/Clear" to="." method="_on_clear_button_up"]
+[connection signal="button_up" from="Restock/GridContainer/A2" to="." method="_on_a_2_button_up"]
+[connection signal="button_up" from="Restock/GridContainer/B2" to="." method="_on_b_2_button_up"]
+[connection signal="button_up" from="Restock/GridContainer/C2" to="." method="_on_c_2_button_up"]
+[connection signal="button_up" from="Restock/Done" to="." method="_on_done_button_up"]
+[connection signal="button_up" from="Finish" to="." method="_on_finish_button_up"]
